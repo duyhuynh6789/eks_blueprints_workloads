@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: team-blue-dev
+    namespace: default
     server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/duyhuynh6789/eks_blueprints_workloads.git
