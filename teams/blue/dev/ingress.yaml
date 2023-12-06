@@ -18,3 +18,25 @@ spec:
                   number: 80
             path: /
             pathType: Prefix
+--------
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: release-argocd-service-ingress
+  namespace: default
+  annotations:
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  # ingressClassName: nginx
+  rules:
+    - host: argocd.demo.d6-vnext.com
+      http:
+        paths:
+          - backend:
+              service: 
+                name: argo-cd-argocd-server
+                port: 
+                  number: 443
+            path: /*
+            pathType: Prefix
