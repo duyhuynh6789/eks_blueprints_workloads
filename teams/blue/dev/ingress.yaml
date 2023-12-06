@@ -18,14 +18,14 @@ spec:
                   number: 80
             path: /
             pathType: Prefix
---------
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: release-argocd-service-ingress
   namespace: default
   annotations:
-    # nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: "nginx"
 spec:
   # ingressClassName: nginx
